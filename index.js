@@ -62,7 +62,29 @@ console.log(dogAge(25,7));
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
+function dogFeeder(age,weight){
+    if(weight <=5){
+      return weight*0.05;
+    }else if(weight >=6 && weight<=10){
+      return weight*0.04;
+    }else if(weight >=11 && weight<=15){
+      return weight*0.03;
+    }else{
+      return weight*0.02;
+    }
+    
+    if(age >=0.16 && age<0.33){
+      return age*0.10;
+    }else if(age>=0.33 && age<0.58){
+      return age*0.05;
+    }else if(age>=0.58 && age <1){
+      return age*0.04;
+    }else{
+      return age*weight;
+    }
+  }
   
+  console.log(dogFeeder(1,15))
 
 
 
@@ -73,6 +95,40 @@ console.log(dogAge(25,7));
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
+var myChoice = 'paper'
+let randNum = Math.floor(Math.random() * 3);
+function comChoices(){
+  if(randNum === 1){
+  return 'rock';
+  }else if(randNum === 2){
+    return 'paper';
+  }else{
+    return 'scissors';
+  }
+}
+let comChoice = (comChoices());
+
+if(myChoice === 'rock' && comChoice === 'scissors'){
+    console.log('Rock v Scissors. You Win');
+  }else if(myChoice === 'scissors' && comChoice === 'paper'){
+   console.log('Scissors v Paper. You win!');
+  }else if(myChoice === 'paper' && comChoice === 'rock'){
+    console.log('Paper v Rock. You win!');
+  }else if(myChoice === 'rock' && comChoice === 'paper'){
+    console.log('Rock v Paper. You lose!');
+  }else if(myChoice === 'paper' && comChoice === 'scissors'){
+    console.log('Paper v Scissors. You Lose!');
+  }else if(myChoice === 'scissors' && comChoice === 'rock'){
+    console.log('Scissors v Rock. You Lose!');
+  }else if(myChoice === 'rock' && comChoice === 'rock'){
+    console.log('Rock v Rock. Tie!');
+  }else if(myChoice === 'paper' && comChoice === 'paper'){
+    console.log('Paper v Paper. Tie!');
+  }else if(myChoice === 'scissors' && comChoice === 'scissors'){
+    console.log('Scissors v Scissors. Tie!');
+  }else{
+    console.log('Oops, what happened?');
+ }
 
   
   
